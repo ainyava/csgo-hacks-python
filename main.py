@@ -4,6 +4,7 @@ from pymem import Pymem
 from Helpers import Offset, Vars
 from wallhack import handle_brightness, handle_glow
 from bhop import handle_bhop
+from trigger_bot import handle_trigger_bot
 
 cheat_is_running = True
 
@@ -43,8 +44,10 @@ def main():
         # Run handlers
         handle_glow()
         handle_bhop()
+        handle_trigger_bot()
 
         if keyboard.is_pressed('F8'):
+            handle_brightness()
             cheat_is_running = False
 
 
