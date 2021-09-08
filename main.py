@@ -2,6 +2,7 @@ import keyboard
 import pymem.process
 from pymem import Pymem
 from Helpers import Offset, Vars
+from wallhack import handle_brightness, handle_glow
 
 cheat_is_running = True
 
@@ -28,6 +29,8 @@ def main():
         exit(-1)
     print(f'Client state {client_state}')
 
+    handle_brightness()
+
     global cheat_is_running
     # Run the code for every frame of the game
     while cheat_is_running:
@@ -36,7 +39,8 @@ def main():
         player_index = Vars.process.read_int(client_state + Offset.dw_client_state_get_local_player)
         Vars.player = Vars.process.read_int(Vars.client + Offset.dw_entity_list + (player_index * 0x10))
 
-        #TODO: Add handlers
+        # Run handlers
+        handle_glow()
 
         if keyboard.is_pressed('F8'):
             cheat_is_running = False
