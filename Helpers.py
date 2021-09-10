@@ -1,10 +1,10 @@
 class Offset:
 	dw_client_state = 0x588FEC
 	dw_client_state_get_local_player = 0x180
-	dw_entity_list = 0x4DA31EC
-	dw_glow_object_manager = 0x52EB658
-	dw_force_attack = 0x31D3714
-	dw_force_jump = 0x524CFDC
+	dw_entity_list = 0x4DA542C
+	dw_glow_object_manager = 0x52ED8A8
+	dw_force_attack = 0x31D59B4
+	dw_force_jump = 0x524F21C
 	m_i_team_num = 0xF4
 	m_i_crosshair_id = 0xB3E8
 	m_i_health = 0x100
