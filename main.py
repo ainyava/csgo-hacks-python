@@ -25,7 +25,7 @@ def main():
         exit(-1)
     print(f'Engine module: {Vars.engine}, Client module: {Vars.client}')
 
-    client_state = Vars.process.read_int(Vars.engine + Offset.dw_client_state)
+    client_state = Vars.process.read_uint(Vars.engine + Offset.dw_client_state)
     if not client_state:
         print('Cant find client state')
         exit(-1)
@@ -38,8 +38,8 @@ def main():
     while cheat_is_running:
 
         # Try to find player entity in memory and run it until player found
-        player_index = Vars.process.read_int(client_state + Offset.dw_client_state_get_local_player)
-        Vars.player = Vars.process.read_int(Vars.client + Offset.dw_entity_list + (player_index * 0x10))
+        player_index = Vars.process.read_uint(client_state + Offset.dw_client_state_get_local_player)
+        Vars.player = Vars.process.read_uint(Vars.client + Offset.dw_entity_list + (player_index * 0x10))
 
         # Run handlers
         handle_glow()
