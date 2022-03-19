@@ -1,4 +1,5 @@
 # CSGO Hacks - External CSGO cheats
+![CSGO Update](https://img.shields.io/badge/CSGO%20Update-2022.03.15-brightgreen)
 
 [Original repository in C++](https://github.com/ainyava/CSGOHacks)
 
